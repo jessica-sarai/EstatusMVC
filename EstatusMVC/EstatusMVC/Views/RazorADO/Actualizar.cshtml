@@ -1,0 +1,20 @@
+﻿@using EstatusMVC.Models
+
+@model EstatusAlumno
+
+@{
+    ViewBag.Title = "Actualizar";
+}
+
+<h2>Actualizar</h2>
+
+<form method="post">
+
+    <p>@Html.DisplayName("Id:") @Html.TextBoxFor(m => m.id) </p>
+    <p>@Html.DisplayName("Clave:") @Html.TextBoxFor(m => m.clave, htmlAttributes: new { name = "clave" }))</p>
+
+    <p>@Html.DisplayName("Nombre:") @Html.TextBoxFor(m => m.nombre, htmlAttributes: new { name = "nombre" })</p>
+
+    <input id="btnActualizar" type="submit" value="Sumar" name="sumar" class="btn btn-outline-info" />
+
+</form>

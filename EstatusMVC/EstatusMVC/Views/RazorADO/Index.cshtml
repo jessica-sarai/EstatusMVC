@@ -1,0 +1,35 @@
+﻿@using EstatusMVC.Models
+
+@model IEnumerable<EstatusAlumno>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table table-hover">
+    <tr>
+        <th>@Html.DisplayNameFor(m => m.id) </th>
+        <th>@Html.DisplayNameFor(m => m.clave)</th>
+        <th>@Html.DisplayNameFor(m => m.nombre)</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) { 
+        <tr>
+            <td>@Html.DisplayFor(m => item.id)</td>
+            <td>@Html.DisplayFor(m => item.clave)</td>
+            <td>@Html.DisplayFor(m => item.nombre)</td>
+            <td>@Html.ActionLink("Consultar","Consultar","RazorADO", new { @id=item.id },null)</td>
+            <td>@Html.ActionLink("Agregar", "Agregar","RazorADO", null, htmlAttributes: new { @class="btn btn-success" })</td>
+            <td>@Html.ActionLink("Actualizar", "Actualizar", "RazorADO", new { @id=item.id, @clave=item.clave, @nombre=item.nombre },null)</td>
+            <td>@Html.ActionLink("Eliminar", "Eliminar", "RazorADO", new { @id = item.id, @clave = item.clave, @nombre = item.nombre }, null)</td>
+        </tr>
+    }
+</table>
+@Html.ActionLink("Agregar", "Agregar")
+
+

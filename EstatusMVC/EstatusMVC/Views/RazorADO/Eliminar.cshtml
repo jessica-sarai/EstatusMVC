@@ -1,0 +1,30 @@
+﻿@using EstatusMVC.Models
+
+@model EstatusAlumno
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Eliminar</h2>
+
+            <form method="post">
+
+                <p id="Modal">Parrafo de Prueba</p>
+                <p>@Html.DisplayName("Id:") @Html.TextBoxFor(m => m.id, htmlAttributes: new { id = "txtId" }) </p>
+                <p>@Html.DisplayName("Clave:") @Html.TextBoxFor(m => m.clave, htmlAttributes: new { name = "clave", id = "txtClave" })</p>
+
+                <p>@Html.DisplayName("Nombre:") @Html.TextBoxFor(m => m.nombre, htmlAttributes: new { name = "nombre", id = "txtNombre" })</p>
+
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="IdEliminar" onclick="eliminar()">
+                    Eliminar
+                </button>
+                
+
+            </form>
+
+@section Scripts{
+
+
+
+    

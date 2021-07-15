@@ -1,0 +1,30 @@
+﻿@using EstatusMVC.Models
+
+@model IEnumerable<EstatusAlumno>
+
+@{
+    ViewBag.Title = "Consultar";
+}
+
+<h2>Consultar</h2>
+
+<h4>Estatus Alumno</h4>
+<table class="table table-bordered">
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayName("Id:") @Html.DisplayFor(m => item.id) </td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayName("Clave:") @Html.DisplayFor(m => item.clave)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayName("Nombre:") @Html.DisplayFor(m => item.nombre)</td>
+
+        </tr>
+
+    }
+</table>
+
